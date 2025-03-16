@@ -15,7 +15,7 @@ export const PersonList: React.FC<Props> = React.memo(
             <div
               className="dropdown-item"
               data-cy="suggestion-item"
-              key={person.name}
+              key={person.slug}
             >
               <p className="has-text-link" onClick={() => onSelect(person)}>
                 {person.name}{' '}

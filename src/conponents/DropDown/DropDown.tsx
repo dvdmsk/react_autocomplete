@@ -43,7 +43,10 @@ export const DropDown: React.FC<Props> = ({ delay = 300, onSelect }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
-    applyQuery(e.target.value);
+    if (e.target.value.trim().length > 0) {
+      applyQuery(e.target.value);
+    }
+
     onSelect(null);
   };
 
