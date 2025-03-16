@@ -22,6 +22,10 @@ export const DropDown: React.FC<Props> = ({ delay = 300, onSelect }) => {
   });
 
   const filteredPeople: Person[] = useMemo(() => {
+    if (appliedQuery.trim() === '') {
+      return peopleFromServer;
+    }
+
     const people = peopleFromServer.filter(person =>
       person.name.toLowerCase().includes(appliedQuery.trim().toLowerCase()),
     );
